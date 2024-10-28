@@ -1,6 +1,8 @@
 /venv
 /imdb-xlm-roberta
 /qa-xlm-roberta
+imdb-xlm-roberta.zip
+qa-xlm-roberta.zip
 *.pyc
 *.class
 sqlnet.log
