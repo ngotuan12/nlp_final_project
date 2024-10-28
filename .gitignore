@@ -1,0 +1,11 @@
+/venv
+*.pyc
+*.class
+sqlnet.log
+/log
+/sqlnet.logs
+/report
+__pycache__
+*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
