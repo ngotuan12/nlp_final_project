@@ -1,5 +1,6 @@
 /venv
 /imdb-xlm-roberta
+/qa-xlm-roberta
 *.pyc
 *.class
 sqlnet.log

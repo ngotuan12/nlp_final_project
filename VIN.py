@@ -10,7 +10,7 @@ user_history = """
 2. Sản phẩm: Áo thể thao Adidas Dri-Fit
 3. Sản phẩm: Quần short thể thao Puma
 """
-
+print(user_history)
 # Tạo prompt đầu vào cho mô hình
 prompt = f"Lịch sử mua sắm của người dùng: {user_history}\nDựa trên lịch sử này, gợi ý sản phẩm tiếp theo mà người dùng có thể quan tâm là:"
 
@@ -22,5 +22,5 @@ outputs = model.generate(**inputs, max_length=100)
 
 # Giải mã kết quả
 recommendation = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
+print("Result")
 print(recommendation)
