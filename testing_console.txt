@@ -1,0 +1,39 @@
+ python roberta1.py
+2024-10-28 10:11:20.188970: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may           see slightly different numerical results due to floating-point round-off errors from different computatio          n orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-10-28 10:11:20.204010: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to regi          ster cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-10-28 10:11:20.221442: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to reg          ister cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-10-28 10:11:20.226836: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to re          gister cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registe          red
+2024-10-28 10:11:20.240685: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary i          s optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFl          ow with the appropriate compiler flags.
+2024-10-28 10:11:21.372056: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could           not find TensorRT
+Loading and preparing data...
+
+Khởi tạo và training model...
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at Fac          ebookAI/xlm-roberta-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight',           'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and infer          ence.
+/usr/local/apps/nlp/venv/lib/python3.12/site-packages/transformers/training_args.py:1545: FutureWarning:           `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_str          ategy` instead
+  warnings.warn(
+Bắt đầu training...
+{'train_runtime': 4430.6436, 'train_samples_per_second': 2.257, 'train_steps_per_second': 0.018, 'train_l          oss': 0.4366383185753456, 'epoch': 1.99}
+100%|██████████████████████████████████████████████████████████████████| 78/78 [1:13:50<00:00, 56.80s/it]
+
+Đánh giá model...
+100%|████████████████████████████████████████████████████████████████████| 16/16 [00:44<00:00,  2.79s/it]
+
+Kết quả đánh giá:
+Accuracy: 0.8800
+F1 Score: 0.8814
+Precision: 0.8577
+Recall: 0.9065
+
+Lưu model...
+
+Test dự đoán với một số ví dụ:
+
+Text: This movie was absolutely fantastic! I loved every minute of it.
+Sentiment: Positive
+Confidence: 0.9631
+
+Text: What a terrible waste of time. I wouldn't recommend this to anyone.
+Sentiment: Negative
+Confidence: 0.8319
